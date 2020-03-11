@@ -183,7 +183,11 @@ const filterSrcPaths = (srcPaths, dependencies) => {
   srcPaths.forEach(path => {
     const pkg = getPkg(path);
 
-    if (dependencies && Reflect.has(dependencies, pkg.name)) {
+    if (
+      dependencies &&
+      Reflect.has(dependencies, pkg.name) &&
+      !filteredPaths.includes(path)
+    ) {
       filteredPaths.push(path);
 
       const subDeps = depsTable[pkg.name].deps;
@@ -265,7 +269,7 @@ const init = paths => {
   }
 
   console.log('Exporting Workspaces config to Webpack.');
-  console.log(config);
+
   return config;
 };
 
