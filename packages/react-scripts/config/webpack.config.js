@@ -773,8 +773,7 @@ module.exports = function (webpackEnv) {
         extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
         formatter: require.resolve('react-dev-utils/eslintFormatter'),
         eslintPath: require.resolve('eslint'),
-        context: isEnvDevelopment && workspacesConfig.development ? workspacesConfig.root : paths.appSrc,
-        files: isEnvDevelopment && workspacesConfig.development ? includePaths : undefined,
+        context: paths.appSrc, 
         // ESLint class options
         cwd: paths.appPath,
         resolvePluginsRelativeTo: __dirname,
