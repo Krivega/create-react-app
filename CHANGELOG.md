@@ -1,3 +1,61 @@
+## 4.0.1 (2020-11-23)
+
+v4.0.1 is a maintenance release that includes minor bug fixes and documentation updates.
+
+#### :bug: Bug Fix
+
+- `react-scripts`
+  - [#9921](https://github.com/facebook/create-react-app/pull/9921) Fix noFallthroughCasesInSwitch/jsx object is not extensible ([@ryota-murakami](https://github.com/ryota-murakami))
+  - [#9869](https://github.com/facebook/create-react-app/pull/9869) Fix react-jsx error ([@benneq](https://github.com/benneq))
+  - [#9885](https://github.com/facebook/create-react-app/pull/9885) fix: `React is not defined` compilation error after ejected ([@n3tr](https://github.com/n3tr))
+  - [#9911](https://github.com/facebook/create-react-app/pull/9911) fix: slow recompile time ([@FezVrasta](https://github.com/FezVrasta))
+- `react-dev-utils`
+  - [#9884](https://github.com/facebook/create-react-app/pull/9884) fix: page doesn't get refreshed when FAST_REFRESH=false ([@n3tr](https://github.com/n3tr))
+
+#### :nail_care: Enhancement
+
+- `react-scripts`
+  - [#10048](https://github.com/facebook/create-react-app/pull/10048) Increase Workbox's maximumFileSizeToCacheInBytes ([@jeffposnick](https://github.com/jeffposnick))
+
+#### :memo: Documentation
+
+- [#10052](https://github.com/facebook/create-react-app/pull/10052) docs: add React Testing Library as a library requiring jsdom ([@anyulled](https://github.com/anyulled))
+
+#### :house: Internal
+
+- `create-react-app`, `react-dev-utils`, `react-scripts`
+  - [#10083](https://github.com/facebook/create-react-app/pull/10083) replace inquirer with prompts ([@EvanBacon](https://github.com/EvanBacon))
+- `cra-template-typescript`, `cra-template`, `react-scripts`
+  - [#9516](https://github.com/facebook/create-react-app/pull/9516) [ImgBot] Optimize images ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+- Other
+  - [#9860](https://github.com/facebook/create-react-app/pull/9860) chore: Update .prettierrc ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+
+#### Committers: 9
+
+- Anyul Rivas ([@anyulled](https://github.com/anyulled))
+- Ben M ([@benneq](https://github.com/benneq))
+- Evan Bacon ([@EvanBacon](https://github.com/EvanBacon))
+- Federico Zivolo ([@FezVrasta](https://github.com/FezVrasta))
+- Jeffrey Posnick ([@jeffposnick](https://github.com/jeffposnick))
+- Jirat Ki. ([@n3tr](https://github.com/n3tr))
+- Michaël De Boey ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+- Ryota Murakami ([@ryota-murakami](https://github.com/ryota-murakami))
+- sho90 ([@sho-t](https://github.com/sho-t))
+
+# Migrating from 4.0.0 to 4.0.1
+
+Inside any created project that has not been ejected, run:
+
+```bash
+npm install --save --save-exact react-scripts@4.0.1
+```
+
+or
+
+```
+yarn add --exact react-scripts@4.0.1
+```
+
 ## 4.0.0 (2020-10-23)
 
 Create React App 4.0 is a major release with several new features, including support for Fast Refresh!
@@ -104,6 +162,7 @@ Node 8 reached End-of-Life at the end of 2019 and is no longer supported.
   - [#7899](https://github.com/facebook/create-react-app/pull/7899) Set resetMocks to true by default in jest config ([@alexkrolick](https://github.com/alexkrolick))
 - `babel-plugin-named-asset-import`, `babel-preset-react-app`, `create-react-app`, `react-app-polyfill`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
   - [#8950](https://github.com/facebook/create-react-app/pull/8950) Dependency major version upgrades ([@ianschmitz](https://github.com/ianschmitz))
+<<<<<<< HEAD
 - `eslint-config-react-app`, `react-scripts`
   - [#8926](https://github.com/facebook/create-react-app/pull/8926) Add import/no-anonymous-default-export lint rule ([@shakib609](https://github.com/shakib609))
   - [#8939](https://github.com/facebook/create-react-app/pull/8939) Bump React Hooks ESLint plugin to 4.0.0 ([@gaearon](https://github.com/gaearon))
@@ -123,6 +182,27 @@ Node 8 reached End-of-Life at the end of 2019 and is no longer supported.
 - `babel-preset-react-app`, `eslint-config-react-app`, `react-scripts`
   - [#9788](https://github.com/facebook/create-react-app/pull/9788) fix: resolve new JSX transform issues ([@mrmckeb](https://github.com/mrmckeb))
 - `eslint-config-react-app`, `react-scripts`
+=======
+- `eslint-config-react-app`, `react-scripts`
+  - [#8926](https://github.com/facebook/create-react-app/pull/8926) Add import/no-anonymous-default-export lint rule ([@shakib609](https://github.com/shakib609))
+  - [#8939](https://github.com/facebook/create-react-app/pull/8939) Bump React Hooks ESLint plugin to 4.0.0 ([@gaearon](https://github.com/gaearon))
+- `cra-template-typescript`, `cra-template`, `create-react-app`, `react-app-polyfill`, `react-dev-utils`, `react-scripts`
+  - [#8948](https://github.com/facebook/create-react-app/pull/8948) Drop Node 8 support ([@ianschmitz](https://github.com/ianschmitz))
+- `babel-plugin-named-asset-import`, `babel-preset-react-app`, `confusing-browser-globals`, `cra-template-typescript`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#8362](https://github.com/facebook/create-react-app/pull/8362) Upgrade to Jest 25 ([@skovhus](https://github.com/skovhus))
+
+#### :bug: Bug Fix
+
+- `react-scripts`
+  - [#9805](https://github.com/facebook/create-react-app/pull/9805) Fix refreshOverlayInterop module scope error ([@ianschmitz](https://github.com/ianschmitz))
+  - [#9037](https://github.com/facebook/create-react-app/pull/9037) Fix dotenv file loading order ([@Timer](https://github.com/Timer))
+  - [#8700](https://github.com/facebook/create-react-app/pull/8700) Skip stdin resuming to support lerna parallel ([@hieuxlu](https://github.com/hieuxlu))
+  - [#8845](https://github.com/facebook/create-react-app/pull/8845) Do not check for interactive session to shut down dev server ([@jeremywadsack](https://github.com/jeremywadsack))
+  - [#8768](https://github.com/facebook/create-react-app/pull/8768) Add .cjs and .mjs files support to test runner ([@ai](https://github.com/ai))
+- `babel-preset-react-app`, `eslint-config-react-app`, `react-scripts`
+  - [#9788](https://github.com/facebook/create-react-app/pull/9788) fix: resolve new JSX transform issues ([@mrmckeb](https://github.com/mrmckeb))
+- `eslint-config-react-app`, `react-scripts`
+>>>>>>> upstreamm/master
   - [#9683](https://github.com/facebook/create-react-app/pull/9683) fix: resolve ESLint config from appPath ([@mrmckeb](https://github.com/mrmckeb))
 - `create-react-app`
   - [#9412](https://github.com/facebook/create-react-app/pull/9412) Fix template name handling ([@iansu](https://github.com/iansu))
