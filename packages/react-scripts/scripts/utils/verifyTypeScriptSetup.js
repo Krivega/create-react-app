@@ -105,8 +105,8 @@ function verifyTypeScriptSetup() {
     console.error(
       chalk.bold(
         'If you are not trying to use TypeScript, please remove the ' +
-          chalk.cyan('tsconfig.json') +
-          ' file from your package root (and any TypeScript files).'
+        chalk.cyan('tsconfig.json') +
+        ' file from your package root (and any TypeScript files).'
       )
     );
     console.error();
@@ -185,13 +185,13 @@ function verifyTypeScriptSetup() {
     // Calling this function also mutates the tsconfig above,
     // adding in "include" and "exclude", but the compilerOptions remain untouched
     let result;
-    parsedTsConfig = immer(readTsConfig, config => {
-      result = ts.parseJsonConfigFileContent(
-        config,
-        ts.sys,
-        path.dirname(paths.appTsConfig)
-      );
-    });
+    parsedTsConfig = { ...readTsConfig };
+
+    result = ts.parseJsonConfigFileContent(
+      parsedTsConfig,
+      ts.sys,
+      path.dirname(paths.appTsConfig)
+    );
 
     if (result.errors && result.errors.length) {
       throw new Error(
@@ -241,7 +241,7 @@ function verifyTypeScriptSetup() {
         `${coloredOption} ${chalk.bold(
           valueToCheck == null ? 'must not' : 'must'
         )} be ${valueToCheck == null ? 'set' : chalk.cyan.bold(value)}` +
-          (reason != null ? ` (${reason})` : '')
+        (reason != null ? ` (${reason})` : '')
       );
     }
   }
