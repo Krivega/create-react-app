@@ -186,7 +186,7 @@ function verifyTypeScriptSetup() {
     // adding in "include" and "exclude", but the compilerOptions remain untouched
     let result;
     parsedTsConfig = { ...readTsConfig };
-
+    
     result = ts.parseJsonConfigFileContent(
       parsedTsConfig,
       ts.sys,
