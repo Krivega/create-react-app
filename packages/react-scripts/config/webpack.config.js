@@ -73,6 +73,7 @@ const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 const workspacesConfig = yarnWorkspaces.init(paths);
+const isUsedWorkspaces = workspacesConfig.paths.length > 0;
 
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
@@ -421,7 +422,7 @@ module.exports = function (webpackEnv) {
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {
               test: /\.(js|mjs|jsx|ts|tsx)$/,
-              include: includePaths,
+              include: useTypeScript && isUsedWorkspaces ? undefined : includePaths,
               loader: require.resolve('babel-loader'),
               options: {
                 customize: require.resolve(
